@@ -79,7 +79,7 @@ processResources {
     def resInputs = [version: project.version, mcVersion: mcVersion, forgeVersion: forgeVersion]
     inputs.properties(resInputs)
 
-    filesMatching("META-INF/mods.toml") {
+    filesMatching(["META-INF/mods.toml", "META-INF/neoforge.mods.toml"]) {
         expand(resInputs)
     }
 }

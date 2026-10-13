@@ -39,6 +39,11 @@ jobs:
             build_cmd: "./gradlew :forge:build -Penabled_platforms=forge --console=plain --build-cache --stacktrace"
             output_dir: "Done/Forge"
 
+          - name: "NeoForge (1.20.4)"
+            loader_id: "neoforge"
+            build_cmd: "./gradlew :forge:build -Penabled_platforms=forge --console=plain --build-cache --stacktrace"
+            output_dir: "Done/NeoForge"
+
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
@@ -76,6 +81,13 @@ jobs:
           find . -type f -path "*/build/libs/*.jar" ! -name "*-dev.jar" ! -name "*-sources.jar" ! -name "*-javadoc.jar" | while read -r jar; do
             cp "$jar" "${{ matrix.output_dir }}/" 2>/dev/null || true
           done
+          if [ "${{ matrix.loader_id }}" = "neoforge" ]; then
+            for f in ${{ matrix.output_dir }}/*forge*.jar; do
+              if [ -f "$f" ]; then
+                mv "$f" "${f//forge/neoforge}" 2>/dev/null || true
+              fi
+            done
+          fi
 
       - name: Upload Build Artifacts
         if: always()
