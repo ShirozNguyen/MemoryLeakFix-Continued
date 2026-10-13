@@ -29,19 +29,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Fabric & Quilt (1.20.x - 1.21.x+)"
+          - name: "Fabric & Quilt (1.20.4)"
             loader_id: "fabric"
-            build_cmd: "./gradlew :fabric:build --console=plain --build-cache --stacktrace"
+            build_cmd: "./gradlew :fabric:build -Penabled_platforms=fabric --console=plain --build-cache --stacktrace"
             output_dir: "Done/Fabric"
 
-          - name: "NeoForge (1.20.4 - 1.21.x+)"
-            loader_id: "neoforge"
-            build_cmd: "./gradlew :neoforge:build --console=plain --build-cache --stacktrace"
-            output_dir: "Done/NeoForge"
-
-          - name: "Forge Legacy (1.18.2 - 1.20.1)"
+          - name: "Forge (1.20.4)"
             loader_id: "forge"
-            build_cmd: "./gradlew :forge:build --console=plain --build-cache --stacktrace"
+            build_cmd: "./gradlew :forge:build -Penabled_platforms=forge --console=plain --build-cache --stacktrace"
             output_dir: "Done/Forge"
 
     steps:

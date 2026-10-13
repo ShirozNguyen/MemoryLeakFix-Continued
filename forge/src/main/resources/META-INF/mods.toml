@@ -1,15 +1,15 @@
 modLoader = "javafml"
 loaderVersion = "*"
-issueTrackerURL = "https://github.com/fxmorin/memoryleakfix/issues"
-license = "LGPL-2.1-only"
+issueTrackerURL = "https://github.com/ShirozNguyen/MemoryLeakFix-Continued/issues"
+license = "LGPL-3.0-or-later"
 
 [[mods]]
 modId = "memoryleakfix"
 version = "${version}"
-displayName = "Memory Leak Fix"
-authors = "FX - PR0CESS"
+displayName = "Memory Leak Fix: Continued"
+authors = "TheRealShiroz, FX - PR0CESS"
 description = '''
-A mod which fixes multiple memory leaks, both client-side & server-side
+Fanmade continuation of Memory Leak Fix for modern Minecraft versions. Fixes multiple memory leaks and lingering references both client-side and server-side.
 '''
 logoFile = "icon.png"
 
@@ -28,5 +28,4 @@ ordering = "NONE"
 side = "BOTH"
 
 [custom.mc-publish]
-curseforge=627566
-modrinth="NRjRiSSD"
+modrinth="cFBi8ffk"

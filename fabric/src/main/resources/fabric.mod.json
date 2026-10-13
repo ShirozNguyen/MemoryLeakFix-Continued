@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "id": "memoryleakfix",
   "version": "${version}",
-  "name": "Memory Leak Fix",
-  "description": "A mod which fixes multiple memory leaks, both client-side & server-side",
+  "name": "Memory Leak Fix: Continued",
+  "description": "Fanmade continuation of Memory Leak Fix for modern Minecraft versions. Fixes multiple memory leaks and lingering references both client-side & server-side.",
   "authors": [
+    "TheRealShiroz",
     "FX - PR0CESS"
   ],
   "contact": {
-    "homepage": "https://github.com/fxmorin/memoryleakfix",
-    "sources": "https://github.com/fxmorin/memoryleakfix",
-    "issues": "https://github.com/fxmorin/memoryleakfix/issues"
+    "homepage": "https://modrinth.com/mod/memoryleakfix-continued",
+    "sources": "https://github.com/ShirozNguyen/MemoryLeakFix-Continued",
+    "issues": "https://github.com/ShirozNguyen/MemoryLeakFix-Continued/issues"
   },
   "icon": "icon.png",
-  "license": "LGPL-2.1-only",
+  "license": "LGPL-3.0-or-later",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -29,7 +30,7 @@
   },
   "custom": {
     "mc-publish": {
-      "modrinth": "NRjRiSSD",
+      "modrinth": "cFBi8ffk",
       "loaders": ["fabric", "quilt"]
     }
   }
