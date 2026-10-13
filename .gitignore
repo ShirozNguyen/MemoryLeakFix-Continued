@@ -1,0 +1,71 @@
+# ==============================================================================
+# Memory Leak Fix: Continued — Git Ignore Rules
+# Designed with strict internal document quarantine (PayBot standard)
+# ==============================================================================
+
+# Gradle & Build Output
+.gradle/
+**/build/
+build/
+*.class
+*.jar
+*.war
+
+# Always keep Gradle Wrapper JARs across all modules
+!gradle/wrapper/gradle-wrapper.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# ==============================================================================
+# INTERNAL AI PROTOCOLS, RESEARCH LEDGERS & DOCUMENTATION (QUARANTINED)
+# DO NOT COMMIT OR UPLOAD TO PUBLIC GITHUB
+# ==============================================================================
+!README.md
+docs/
+.agents/
+.FOR_AI_AGENTS/
+.FOR_AI_AGENTS_ONLY/
+AI_AGENTS_MUST_READ_THIS.md
+MemoryLeakFix_Fanmade_Continuation_SRS.md
+CHANGELOG.md
+LOG.md
+*.log
+*.txt
+
+# ==============================================================================
+# DIAGNOSTICS, HEAP DUMPS & PROFILER DATA
+# ==============================================================================
+build-diagnostics/
+build-diagnostics-ci/
+*.hprof
+*.jfr
+hs_err_pid*.log
+
+# ==============================================================================
+# TEMPORARY & LOCAL WORKSPACES
+# ==============================================================================
+scratch/
+test/
+tools/
+trash/
+done/
+Done/
+Server/
+*.zip
+*.tar.gz
+
+# ==============================================================================
+# IDE & OS ARTIFACTS
+# ==============================================================================
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# TOKENS, CREDENTIALS & SECRETS
+# ==============================================================================
+*.token
+.modrinth_token
+.curseforge_token
+.git_token_tmp
