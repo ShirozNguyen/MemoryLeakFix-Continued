@@ -3,10 +3,9 @@ package dev.memoryleakfix.continuation.config;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -38,7 +37,7 @@ public final class ConfigLoader {
         Map<FeatureId, Boolean> states = new EnumMap<>(FeatureId.class);
         boolean debugLogging = false;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8))) {
+        try (BufferedReader reader = Files.newBufferedReader(file.toPath(), StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -76,7 +75,7 @@ public final class ConfigLoader {
             if (parent != null && !parent.exists()) {
                 parent.mkdirs();
             }
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, StandardCharsets.UTF_8))) {
+            try (BufferedWriter writer = Files.newBufferedWriter(file.toPath(), StandardCharsets.UTF_8)) {
                 writer.write(ConfigSchema.generateDefaultToml());
             }
         } catch (IOException ignored) {

@@ -65,28 +65,41 @@ jobs:
       - name: Build Mod Module
         shell: bash
         run: |
-          set -o pipefail
+          set -eo pipefail
           mkdir -p build-diagnostics ${{ matrix.output_dir }}
           echo "=== Building ${{ matrix.name }} ==="
           
           if [ -f "gradlew" ]; then
             chmod +x gradlew
-            ${{ matrix.build_cmd }} 2>&1 | tee "build-diagnostics/${{ matrix.loader_id }}.log" || true
+            ${{ matrix.build_cmd }} 2>&1 | tee "build-diagnostics/${{ matrix.loader_id }}.log"
           else
-            echo "Gradle wrapper not yet present in repository root. Creating skeleton check..."
-            echo "Target module ${{ matrix.loader_id }} ready for toolchain setup." > "build-diagnostics/${{ matrix.loader_id }}.log"
+            echo "Gradle wrapper not present."
+            exit 1
           fi
           
-          # Collect generated jars
-          find . -type f -path "*/build/libs/*.jar" ! -name "*-dev.jar" ! -name "*-sources.jar" ! -name "*-javadoc.jar" | while read -r jar; do
-            cp "$jar" "${{ matrix.output_dir }}/" 2>/dev/null || true
+          target_module="${{ matrix.loader_id }}"
+          if [ "$target_module" = "neoforge" ]; then
+            target_module="forge"
+          fi
+          
+          find "$target_module/build/libs/" -type f -name "*.jar" ! -name "*-dev.jar" ! -name "*-sources.jar" ! -name "*-javadoc.jar" ! -name "*-shadow.jar" ! -name "*-transform*" | while read -r jar; do
+            echo "Found release jar: $jar"
+            cp "$jar" "${{ matrix.output_dir }}/"
           done
+          
           if [ "${{ matrix.loader_id }}" = "neoforge" ]; then
             for f in ${{ matrix.output_dir }}/*forge*.jar; do
               if [ -f "$f" ]; then
-                mv "$f" "${f//forge/neoforge}" 2>/dev/null || true
+                mv "$f" "${f//forge/neoforge}"
               fi
             done
+          fi
+          
+          jar_count=$(find "${{ matrix.output_dir }}" -maxdepth 1 -name "*.jar" | wc -l)
+          echo "Collected $jar_count jar(s) in ${{ matrix.output_dir }}"
+          if [ "$jar_count" -eq 0 ]; then
+            echo "ERROR: No release jar was generated for ${{ matrix.name }}!"
+            exit 1
           fi
 
       - name: Upload Build Artifacts
