@@ -8,7 +8,7 @@ public final class MemoryLeakFixCommon {
 
     public static final String MOD_ID = "memoryleakfix";
     public static final String MOD_NAME = "Memory Leak Fix: Continued";
-    public static final String VERSION = "1.0.6";
+    public static final String VERSION = "1.0.7";
 
     private static boolean initialized = false;
 

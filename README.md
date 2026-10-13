@@ -4,7 +4,7 @@
 <!-- ===== BUILD & STATUS BADGES ===== -->
 [![Java 21](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/built-with/java21_46h.png)](https://www.oracle.com/java/)
 [![Gradle](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/built-with/gradle_46h.png)](https://gradle.org)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://choosealicense.com/licenses/lgpl-3.0/)
 [![CI Build](https://img.shields.io/badge/Build-GitHub_Actions-brightgreen?logo=github-actions)](https://github.com/ShirozNguyen/MemoryLeakFix-Continued/actions)
 [![Modrinth](https://img.shields.io/badge/Modrinth-memoryleakfix--continued-green?logo=modrinth)](https://modrinth.com/mod/memoryleakfix-continued)
 
@@ -18,7 +18,7 @@
 
 > [!IMPORTANT]
 > **Community Continuation Notice:**  
-> This project is an independent, community-driven continuation of the original, archived **[MemoryLeakFix](https://github.com/Carpertheim/MemoryLeakFix)** mod created by **Carpertheim** (Cartman).  
+> This project is an independent, community-driven continuation of the original, archived **[MemoryLeakFix](https://github.com/FxMorin/MemoryLeakFix)** mod created by **[FX - PR0CESS](https://github.com/FxMorin)** (Carpertheim).  
 > All credits for the foundational research and original mitigation concepts belong to the original author and upstream contributors.
 
 ---
@@ -107,6 +107,6 @@ Compiled artifacts will be located in each subproject's `build/libs/` directory.
 
 ## 📜 License & Credits
 
-* **Original Author:** [Carpertheim (Cartman)](https://github.com/Carpertheim) & [FxMorin](https://github.com/FxMorin)
+* **Original Author:** [FX - PR0CESS](https://github.com/FxMorin) (Carpertheim)
 * **Continuation Maintainer:** Community Contributors
-* **License:** Licensed under the [GNU Lesser General Public License v3.0 (LGPLv3)](https://www.gnu.org/licenses/lgpl-3.0).
+* **License:** Licensed under the [GNU Lesser General Public License v3.0 (LGPLv3)](https://choosealicense.com/licenses/lgpl-3.0/).
