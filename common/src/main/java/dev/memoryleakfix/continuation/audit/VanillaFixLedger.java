@@ -19,7 +19,7 @@ public final class VanillaFixLedger {
         AFFECTED_RANGES.put(FeatureId.PACKET_PAYLOAD, MinecraftVersionRange.between("1.16.0", "1.20.1"));
         AFFECTED_RANGES.put(FeatureId.BIOME_TEMPERATURE, MinecraftVersionRange.between("1.16.0", "1.20.4"));
         AFFECTED_RANGES.put(FeatureId.CLIENT_TARGET, MinecraftVersionRange.between("1.16.0", "1.20.4"));
-        AFFECTED_RANGES.put(FeatureId.SCREENSHOT_IMAGE, MinecraftVersionRange.between("1.16.0", "1.20.4"));
+        AFFECTED_RANGES.put(FeatureId.SCREENSHOT_IMAGE, MinecraftVersionRange.from("1.16.0"));
         AFFECTED_RANGES.put(FeatureId.COMBAT_TRACKER, MinecraftVersionRange.from("1.16.0"));
         AFFECTED_RANGES.put(FeatureId.SCREEN_WORLD_REFERENCE, MinecraftVersionRange.from("1.16.0"));
     }

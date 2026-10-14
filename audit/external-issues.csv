@@ -1,0 +1,11 @@
+issue_id,title,source,affected_versions,memory_domain,root_cause_status,decision
+MC-298464,Memory leak in Hoglin farm / entity removal with CHANGED_DIMENSION,MOJIRA,"1.20.x, 1.21.x",JAVA_HEAP,ROOT_CAUSE_VERIFIED,ACTIVE_PATCH
+MC-261339,Memory Leak in Minecraft (Offheap Rendering),MOJIRA,"1.19.x, 1.20.x",DIRECT_BUFFER,INVESTIGATION,AUDIT_ONLY
+MC-272954,End Gateway causes abnormal allocation rate and slow chunk loading,MOJIRA,"1.20.x, 1.21.x",ALLOCATION_CHURN,CONFIRMED_TELEMETRY,DIAGNOSTIC_ONLY
+MC-297337,Allocation Rate on F3 freezes when allocation increases,MOJIRA,"1.21.x",TELEMETRY,CONFIRMED_TELEMETRY,NO_PATCH_TELEMETRY_BUG
+MC-242708,Spectator memory leak,MOJIRA,"1.17.x",JAVA_HEAP,UPSTREAM_FIXED,EXCLUDED_FROM_1_18
+MC-166846,Resource Pack Reload memory accumulation and crash,MOJIRA,"1.15.x",NATIVE_TEXTURE,HISTORICAL,DISCOVERY_ONLY
+MC-241263,Off-heap memory leak,MOJIRA,"1.18.x",DIRECT_BUFFER,HISTORICAL,HISTORICAL_POINTER
+MC-312352,Memory handling regression between 26.3 and 26.4 Snapshot 2,MOJIRA,"26.3, 26.4",JAVA_HEAP_OR_WAYLAND,TRIAGE_SIGNAL,REGRESSION_TEST_BACKLOG
+ModernFix-460,Process RAM larger than -Xmx with ModernFix + FerriteCore,GITHUB,"1.20.1",PROCESS_COMMIT,INSUFFICIENT_EVIDENCE,NO_PATCH_INSUFFICIENT_EVIDENCE
+Sodium-1299,Out Of Memory on Sodium Fabric 1.18.2 with large modpack,GITHUB,"1.18.2",MULTI_FACTOR,NOT_PLANNED,NO_PATCH_MULTI_FACTOR

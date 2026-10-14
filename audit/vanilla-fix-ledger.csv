@@ -1,0 +1,16 @@
+feature_id,original_issue_ids,vanilla_class,claimed_fix_version,verified_fixed_from,verified_still_affected_through,affected_patch_versions,side,decision
+biome_temperature,MC-None,net.minecraft.world.level.biome.Biome,1.20.5,1.20.5,1.20.4,"1.16.0-1.20.4",BOTH,ACTIVE_BELOW_1_20_5
+entity_memories,MC-260605,net.minecraft.world.entity.ai.Brain,1.19.4,1.19.4,1.19.3,"1.16.0-1.19.3",SERVER,EXCLUDED_FROM_1_19_4
+tag_key,MC-248621,net.minecraft.tags.TagKey,1.19,1.19.0,1.18.2,"1.18.0-1.18.2",BOTH,EXCLUDED_FROM_1_19
+drowned_navigation,MC-202246,net.minecraft.world.entity.monster.Drowned,1.17,1.17.0,1.16.5,"1.16.0-1.16.5",SERVER,EXCLUDED_FROM_1_17
+texture_util,MC-None,com.mojang.blaze3d.platform.TextureUtil,1.19.4,1.19.4,1.19.3,"1.16.0-1.19.3",CLIENT,EXCLUDED_FROM_1_19_4
+packet_payload,MC-None,net.minecraft.network.protocol.common.custom.CustomPacketPayload,1.20.2,1.20.2,1.20.1,"1.20.0-1.20.1",BOTH,EXCLUDED_FROM_1_20_2
+client_target,MC-101260,net.minecraft.client.Minecraft,1.20.5,1.20.5,1.20.4,"1.16.0-1.20.4",CLIENT,ACTIVE_BELOW_1_20_5
+screenshot_image,MC-None,net.minecraft.client.Screenshot,None,UNFIXED,26.4-Snapshot-3,"1.16.0-26.x",CLIENT,ACTIVE_ALL_VERSIONS
+screen_world_reference,MC-None,net.minecraft.client.Minecraft,None,UNFIXED,26.4-Snapshot-3,"1.17.0-26.x",CLIENT,ACTIVE_ALL_VERSIONS
+combat_tracker,MC-298464,net.minecraft.world.damagesource.CombatTracker,None,UNFIXED,26.4-Snapshot-3,"1.20.0-26.x",SERVER,ACTIVE_MODERN_VERSIONS
+spectator_leak,MC-242708,net.minecraft.server.level.ServerPlayer,1.18-RC1,1.18.0,1.17.1,"1.16.0-1.17.1",SERVER,EXCLUDED_FROM_1_18
+offheap_rendering,MC-261339,com.mojang.blaze3d.systems.RenderSystem,None,UNFIXED,26.4-Snapshot-3,"1.20.0-26.x",CLIENT,AUDIT_INVESTIGATION
+end_gateway_churn,MC-272954,net.minecraft.world.level.block.entity.TheEndGatewayBlockEntity,None,UNFIXED,26.4-Snapshot-3,"1.20.0-26.x",SERVER,AUDIT_DIAGNOSTIC
+allocation_freeze,MC-297337,net.minecraft.client.gui.components.DebugScreenOverlay,None,UNFIXED,26.4-Snapshot-3,"1.20.0-26.x",CLIENT,AUDIT_DIAGNOSTIC
+snapshot_spectator_chunk,MC-312352,net.minecraft.server.level.ServerLevel,None,UNFIXED,26.4-Snapshot-3,"26.3-26.4",SERVER,AUDIT_REGRESSION

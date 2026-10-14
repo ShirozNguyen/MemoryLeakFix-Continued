@@ -1,0 +1,87 @@
+schemaVersion: 1
+lastVerified: "2026-10-14"
+features:
+  - id: biome_temperature
+    name: "Biome Temperature Cache Mitigation"
+    category: "WORLD_GEN"
+    status: "ACTIVE_LEGACY_ONLY"
+    configKey: "features.biome_temperature.enabled"
+    defaultEnabled: true
+    minMinecraft: "1.16.0"
+    maxMinecraft: "1.20.4"
+    fixedInVanillaFrom: "1.20.5"
+    sides: ["CLIENT", "SERVER"]
+    mixins:
+      - class: "dev.memoryleakfix.continuation.mixin.biome.BiomeTemperatureCacheMixin"
+        target: "net.minecraft.world.level.biome.Biome"
+        method: "getTemperature"
+        injection: "HEAD"
+        expectedMatches: 1
+
+  - id: client_target
+    name: "Client Target & Crosshair Reference Cleanup"
+    category: "CLIENT_LIFECYCLE"
+    status: "ACTIVE_LEGACY_ONLY"
+    configKey: "features.client_target.enabled"
+    defaultEnabled: true
+    minMinecraft: "1.16.0"
+    maxMinecraft: "1.20.4"
+    fixedInVanillaFrom: "1.20.5"
+    sides: ["CLIENT"]
+    mixins:
+      - class: "dev.memoryleakfix.continuation.mixin.target.ClientTargetReferenceMixin"
+        target: "net.minecraft.client.Minecraft"
+        method: "runTick"
+        injection: "HEAD"
+        expectedMatches: 1
+
+  - id: screenshot_image
+    name: "Huge Screenshot Buffer & NativeImage Mitigation"
+    category: "NATIVE_IMAGE"
+    status: "ACTIVE_ALL_VERSIONS"
+    configKey: "features.screenshot_image.enabled"
+    defaultEnabled: true
+    minMinecraft: "1.16.0"
+    maxMinecraft: "26.4"
+    fixedInVanillaFrom: null
+    sides: ["CLIENT"]
+    mixins:
+      - class: "dev.memoryleakfix.continuation.mixin.screenshot.HugeScreenshotBufferMixin"
+        target: "net.minecraft.client.Screenshot"
+        method: "grab"
+        injection: "TAIL"
+        expectedMatches: 1
+
+  - id: combat_tracker
+    name: "CombatTracker Entity Retention (MC-298464)"
+    category: "ENTITY_LIFECYCLE"
+    status: "ACTIVE_ALL_VERSIONS"
+    configKey: "features.combat_tracker.enabled"
+    defaultEnabled: true
+    minMinecraft: "1.20.0"
+    maxMinecraft: "26.4"
+    fixedInVanillaFrom: null
+    sides: ["SERVER"]
+    mixins:
+      - class: "dev.memoryleakfix.continuation.mixin.entity.CombatTrackerLeakMixin"
+        target: "net.minecraft.world.damagesource.CombatTracker"
+        method: "recheckStatus"
+        injection: "TAIL"
+        expectedMatches: 1
+
+  - id: screen_world_reference
+    name: "Screen World & Entity Reference Cleanup"
+    category: "GUI_LIFECYCLE"
+    status: "ACTIVE_ALL_VERSIONS"
+    configKey: "features.screen_world_reference.enabled"
+    defaultEnabled: true
+    minMinecraft: "1.17.0"
+    maxMinecraft: "26.4"
+    fixedInVanillaFrom: null
+    sides: ["CLIENT"]
+    mixins:
+      - class: "dev.memoryleakfix.continuation.mixin.screen.ScreenWorldReferenceMixin"
+        target: "net.minecraft.client.gui.screens.Screen"
+        method: "removed"
+        injection: "TAIL"
+        expectedMatches: 1

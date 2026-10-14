@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": 1,
+  "projectName": "Memory Leak Fix: Continued",
+  "modId": "memoryleakfix",
+  "projectVersion": "1.0.8",
+  "intendedRange": "1.16.x through 26.x",
+  "lastVerifiedAt": "2026-10-14",
+  "versionLanes": {
+    "legacy-116": {
+      "name": "Legacy 1.16 Lane",
+      "minecraftRange": "1.16.x",
+      "javaMajor": 8,
+      "buildProfile": "pre1.17",
+      "status": "CI_ONLY",
+      "loaders": ["fabric", "forge"],
+      "patchVersions": ["1.16", "1.16.1", "1.16.2", "1.16.3", "1.16.4", "1.16.5"]
+    },
+    "legacy-117": {
+      "name": "Legacy 1.17 Lane",
+      "minecraftRange": "1.17.x",
+      "javaMajor": 16,
+      "buildProfile": "1.17+",
+      "status": "CI_ONLY",
+      "loaders": ["fabric", "forge", "quilt"],
+      "patchVersions": ["1.17", "1.17.1"]
+    },
+    "legacy-118": {
+      "name": "Legacy 1.18 Lane",
+      "minecraftRange": "1.18.x",
+      "javaMajor": 17,
+      "buildProfile": "1.17+",
+      "status": "CI_ONLY",
+      "loaders": ["fabric", "forge", "quilt"],
+      "patchVersions": ["1.18", "1.18.1", "1.18.2"]
+    },
+    "legacy-119": {
+      "name": "Legacy 1.19 Lane",
+      "minecraftRange": "1.19.x",
+      "javaMajor": 17,
+      "buildProfile": "1.17+",
+      "status": "CI_ONLY",
+      "loaders": ["fabric", "forge", "quilt"],
+      "patchVersions": ["1.19", "1.19.1", "1.19.2", "1.19.3", "1.19.4"]
+    },
+    "legacy-120": {
+      "name": "Legacy & Bridge 1.20 Lane",
+      "minecraftRange": "1.20.x",
+      "javaMajor": 17,
+      "buildProfile": "1.17+",
+      "status": "SUPPORTED",
+      "loaders": ["fabric", "forge", "neoforge", "quilt"],
+      "patchVersions": ["1.20", "1.20.1", "1.20.2", "1.20.3", "1.20.4", "1.20.5", "1.20.6"]
+    },
+    "modern-121": {
+      "name": "Modern 1.21 Lane",
+      "minecraftRange": "1.21.x",
+      "javaMajor": 21,
+      "buildProfile": "modern-1.21",
+      "status": "EXPERIMENTAL",
+      "loaders": ["fabric", "neoforge", "quilt"],
+      "patchVersions": ["1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4"]
+    },
+    "stable-26x": {
+      "name": "Stable 26.x Lane",
+      "minecraftRange": "26.x",
+      "javaMajor": 21,
+      "buildProfile": "stable-26x",
+      "status": "EXPERIMENTAL",
+      "loaders": ["fabric", "neoforge", "quilt"],
+      "patchVersions": ["26.0", "26.1", "26.2", "26.3"]
+    },
+    "preview-26x": {
+      "name": "Preview Snapshot Lane",
+      "minecraftRange": "26.4+",
+      "javaMajor": 21,
+      "buildProfile": "preview-26x",
+      "status": "EXPERIMENTAL",
+      "loaders": ["fabric", "neoforge"],
+      "patchVersions": ["26.4-Snapshot-1", "26.4-Snapshot-2", "26.4-Snapshot-3"]
+    }
+  },
+  "targets": [
+    {
+      "minecraft": "1.16.5",
+      "lane": "legacy-116",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.14.0",
+      "javaMajor": 8,
+      "status": "CI_ONLY",
+      "buildProfile": "pre1.17",
+      "featuresSupported": ["biome_temperature", "drowned_navigation", "entity_memories", "read_resources", "client_target"]
+    },
+    {
+      "minecraft": "1.16.5",
+      "lane": "legacy-116",
+      "loader": "forge",
+      "loaderVersionRange": ">=36.2.34",
+      "javaMajor": 8,
+      "status": "CI_ONLY",
+      "buildProfile": "pre1.17",
+      "featuresSupported": ["biome_temperature", "drowned_navigation", "entity_memories", "read_resources", "client_target"]
+    },
+    {
+      "minecraft": "1.18.2",
+      "lane": "legacy-118",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.14.0",
+      "javaMajor": 17,
+      "status": "CI_ONLY",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "tag_key", "entity_memories", "read_resources", "huge_screenshot", "client_target"]
+    },
+    {
+      "minecraft": "1.18.2",
+      "lane": "legacy-118",
+      "loader": "forge",
+      "loaderVersionRange": ">=40.2.0",
+      "javaMajor": 17,
+      "status": "CI_ONLY",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "tag_key", "entity_memories", "read_resources", "huge_screenshot", "client_target"]
+    },
+    {
+      "minecraft": "1.19.4",
+      "lane": "legacy-119",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.14.0",
+      "javaMajor": 17,
+      "status": "CI_ONLY",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target"]
+    },
+    {
+      "minecraft": "1.19.4",
+      "lane": "legacy-119",
+      "loader": "forge",
+      "loaderVersionRange": ">=45.1.0",
+      "javaMajor": 17,
+      "status": "CI_ONLY",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target"]
+    },
+    {
+      "minecraft": "1.20.1",
+      "lane": "legacy-120",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.14.0",
+      "javaMajor": 17,
+      "status": "SUPPORTED",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.20.1",
+      "lane": "legacy-120",
+      "loader": "forge",
+      "loaderVersionRange": ">=47.1.0",
+      "javaMajor": 17,
+      "status": "SUPPORTED",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.20.4",
+      "lane": "legacy-120",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.15.0",
+      "javaMajor": 17,
+      "status": "SUPPORTED",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.20.4",
+      "lane": "legacy-120",
+      "loader": "forge",
+      "loaderVersionRange": ">=49.0.14",
+      "javaMajor": 17,
+      "status": "SUPPORTED",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.20.4",
+      "lane": "legacy-120",
+      "loader": "neoforge",
+      "loaderVersionRange": ">=20.4.0",
+      "javaMajor": 17,
+      "status": "SUPPORTED",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["biome_temperature", "huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.20.6",
+      "lane": "legacy-120",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.15.0",
+      "javaMajor": 21,
+      "status": "EXPERIMENTAL",
+      "buildProfile": "1.17+",
+      "featuresSupported": ["huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.21.1",
+      "lane": "modern-121",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.16.0",
+      "javaMajor": 21,
+      "status": "EXPERIMENTAL",
+      "buildProfile": "modern-1.21",
+      "featuresSupported": ["huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "1.21.1",
+      "lane": "modern-121",
+      "loader": "neoforge",
+      "loaderVersionRange": ">=21.1.0",
+      "javaMajor": 21,
+      "status": "EXPERIMENTAL",
+      "buildProfile": "modern-1.21",
+      "featuresSupported": ["huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "26.3",
+      "lane": "stable-26x",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.16.0",
+      "javaMajor": 21,
+      "status": "EXPERIMENTAL",
+      "buildProfile": "stable-26x",
+      "featuresSupported": ["huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    },
+    {
+      "minecraft": "26.4-Snapshot-3",
+      "lane": "preview-26x",
+      "loader": "fabric",
+      "loaderVersionRange": ">=0.16.0",
+      "javaMajor": 21,
+      "status": "EXPERIMENTAL",
+      "buildProfile": "preview-26x",
+      "featuresSupported": ["huge_screenshot", "client_target", "screen_world_reference", "combat_tracker"]
+    }
+  ]
+}
