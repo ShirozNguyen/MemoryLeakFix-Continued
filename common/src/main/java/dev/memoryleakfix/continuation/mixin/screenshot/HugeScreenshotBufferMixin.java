@@ -3,7 +3,7 @@ package dev.memoryleakfix.continuation.mixin.screenshot;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
-import com.mojang.blaze3d.platform.GlUtil;
+import org.lwjgl.system.MemoryUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
@@ -44,7 +44,7 @@ public abstract class HugeScreenshotBufferMixin {
     ) {
         ByteBuffer buf = bufRef.get();
         if (buf != null) {
-            GlUtil.freeMemory(buf);
+            MemoryUtil.memFree(buf);
             bufRef.set(null);
         }
     }
